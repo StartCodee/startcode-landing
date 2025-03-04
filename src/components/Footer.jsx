@@ -12,7 +12,7 @@ import {
 export default function Footer() {
   return (
     <footer className="relative text-white">
-      <div className="relative w-full bg-[url('/footer-pattern.png')] bg-cover bg-center">
+      <div className="relative w-full bg-[url('/footer-pattern.webp')] bg-cover bg-center">
         <div className="container mx-auto px-4 py-12">
           {/* Desktop Layout */}
           <div className="hidden md:flex flex-col items-center justify-center text-center text-white">
@@ -20,7 +20,7 @@ export default function Footer() {
               {/* Left Column - Logo */}
               <div className="flex-1 flex flex-col items-start">
                 <img
-                  src="/scode.png"
+                  src="/scode.webp"
                   alt="Startcode Logo"
                   className="w-32 mb-4"
                 />
@@ -87,7 +87,7 @@ export default function Footer() {
             {/* Logo and Description */}
             <div className="flex flex-col items-center">
               <img
-                src="/scode.png"
+                src="/scode.webp"
                 alt="Startcode Logo"
                 className="w-32 mb-4"
               />

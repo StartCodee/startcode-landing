@@ -4,7 +4,7 @@ import RotatingText from "../blocks/TextAnimations/RotatingText/RotatingText";
 export default function Hero() {
   return (
     <>
-      <div className="relative w-full bg-[url('/grid-pattern.png')] bg-cover bg-center">
+      <div className="relative w-full bg-[url('/grid-pattern.webp')] bg-cover bg-center">
         {/* Spotlight di kanan atas */}
 
         {/* Konten Hero */}
@@ -52,19 +52,19 @@ export default function Hero() {
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10 mt-6">
               {[
-                "plantsasriLogo.png",
-                "tni.png",
+                "plantsasriLogo.webp",
+                "tni.webp",
                 "ipb.svg",
-                "moodprimalogo.png",
-                "logosmkn3.png",
-                "djp.png",
-                "sulteng-logo.png",
-                "mpp-logo.png",
-                "bonet.jpg",
+                "moodprimalogo.webp",
+                "logosmkn3.webp",
+                "djp.webp",
+                "sulteng-logo.webp",
+                "mpp-logo.webp",
+                "bonet.webp",
                 "smkn4.svg",
-                "logo-bkad.png",
-                "bi.png",
-                "travelwifi.png",
+                "logo-bkad.webp",
+                "bi.webp",
+                "travelwifi.webp",
               ].map((logo, index) => (
                 <img
                   key={index}
@@ -85,7 +85,7 @@ export default function Hero() {
           {/* Card Kiri */}
           <div className="relative md:col-span-7 bg-gradient-to-r h-[400px] from-[#04071D] to-[#0C0E23] p-6 rounded-[23px] border border-[rgba(54,55,73,0.43)] text-white flex items-center">
             <img
-              src="/laptop.png"
+              src="/laptop.webp"
               className="absolute inset-0 w-full h-full object-cover rounded-[23px] opacity-100"
               alt="Background"
             />
@@ -104,7 +104,7 @@ export default function Hero() {
               className="relative bg-gradient-to-r from-[#04071D] to-[#0C0E23] p-6 rounded-[23px] border border-[rgba(54,55,73,0.43)] text-white flex items-center"
             >
               <img
-                src="/globe.png"
+                src="/globe.webp"
                 className="absolute inset-0 w-full h-full object-cover opacity-100"
                 alt="Background"
               />
@@ -127,7 +127,7 @@ export default function Hero() {
                 </p>
               </div>
               <img
-                src="/techstack.png"
+                src="/techstack.webp"
                 className="w-[50%] h-full object-cover opacity-100"
                 style={{
                   borderTopRightRadius: "15px",
@@ -147,7 +147,7 @@ export default function Hero() {
               className="relative bg-gradient-to-r from-[#04071D] to-[#0C0E23] p-6 rounded-[23px] border border-[rgba(54,55,73,0.43)] text-white flex items-center"
             >
               <img
-                src="/backgorund-grid.png"
+                src="/backgorund-grid.webp"
                 className="absolute inset-0 w-full h-full object-cover opacity-100"
                 alt="Background"
               />
@@ -156,7 +156,7 @@ export default function Hero() {
                 <p className="text-sm">Lorem ipsum dolor sit a</p>
               </div>
               <img
-                src="/input.png"
+                src="/input.webp"
                 className="absolute bottom-0 right-0 w-[50%] object-cover opacity-100"
                 alt="Input"
               />
@@ -167,7 +167,7 @@ export default function Hero() {
               className="relative bg-gradient-to-r from-[#04071D] to-[#0C0E23] p-6 rounded-[23px] border border-[rgba(54,55,73,0.43)] text-white flex items-center"
             >
               <img
-                src="/backgroundrainbow.png"
+                src="/backgroundrainbow.webp"
                 className="absolute inset-0 w-full h-full object-cover opacity-50"
                 style={{ borderRadius: "20px" }}
                 alt="Background"
@@ -184,7 +184,7 @@ export default function Hero() {
           {/* Card Kanan */}
           <div className="relative md:col-span-8 bg-gradient-to-r from-[#04071D] to-[#0C0E23] pl-6 py-6 rounded-[23px] border border-[rgba(54,55,73,0.43)] text-white flex items-center justify-between overflow-hidden">
             <img
-              src="/backgorund-grid.png"
+              src="/backgorund-grid.webp"
               className="absolute inset-0 w-full h-full object-cover opacity-100"
               alt="Background"
             />
@@ -195,7 +195,7 @@ export default function Hero() {
               </p>
             </div>
             <img
-              src="/code.png"
+              src="/code.webp"
               className="w-[50%] h-full object-cover opacity-100"
               alt="Background"
             />

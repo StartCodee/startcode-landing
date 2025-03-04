@@ -37,7 +37,7 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 rounded-[23px] h-[200px] border border-[rgba(54,55,73,0.43)] text-white flex gap-8 items-center bg-gradient-to-r from-[#04071D] to-[#0C0E23]">
               <img
-                src="/webDevelopment.png"
+                src="/webDevelopment.webp"
                 className=" w-[150px] mr-4"
                 alt="Mobile Development"
               />
@@ -52,7 +52,7 @@ export default function Services() {
 
             <div className="p-6 rounded-[23px] h-[200px] border border-[rgba(54,55,73,0.43)] text-white flex gap-8 items-center bg-gradient-to-r from-[#04071D] to-[#0C0E23]">
               <img
-                src="/mobileDevelopment.png"
+                src="/mobileDevelopment.webp"
                 className=" w-[150px] mr-4"
                 alt="Mobile Development"
               />
@@ -67,7 +67,7 @@ export default function Services() {
 
             <div className="p-6 rounded-[23px] h-[200px] border border-[rgba(54,55,73,0.43)] text-white flex gap-8 items-center bg-gradient-to-r from-[#04071D] to-[#0C0E23]">
               <img
-                src="/solutionTechnology.png"
+                src="/solutionTechnology.webp"
                 className=" w-[150px] mr-4"
                 alt="Mobile Development"
               />
@@ -82,7 +82,7 @@ export default function Services() {
 
             <div className="p-6 rounded-[23px] h-[200px] border border-[rgba(54,55,73,0.43)] text-white flex gap-8 items-center bg-gradient-to-r from-[#04071D] to-[#0C0E23]">
               <img
-                src="/softwareDevelopment.png"
+                src="/softwareDevelopment.webp"
                 className=" w-[150px] mr-4"
                 alt="Mobile Development"
               />
