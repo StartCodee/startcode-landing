@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-
 const Portfolio = () => {
   const images = [
     {
       src: "/images/etwpad.webp",
       tech: [
         "/tech-stack/laravel.svg",
+        "/tech-stack/go.svg",
+        "/tech-stack/livewire.webp",
         "/tech-stack/bootstrap.svg",
         "/tech-stack/postgresql.svg",
         "/tech-stack/nginx.svg",
       ],
-      gridArea: "itgrid one shadow md:col-span-2 md:row-span-2",
+      gridArea: "itgrid one shadow md:col-span-2 bg-top md:row-span-2",
     },
     {
       src: "images/bkad.webp",
@@ -25,237 +26,210 @@ const Portfolio = () => {
       gridArea: "itgrid two shadow md:col-span-2 md:row-span-1 bg-top",
     },
     {
-      src: "images/bkad.webp",
+      src: "images/DMP.webp",
       tech: [
-        "/tech-stack/laravel.svg",
+        "/tech-stack/flask.svg",
+        "/tech-stack/next.svg",
         "/tech-stack/tailwind.svg",
-        "/tech-stack/mysql.svg",
-        "/tech-stack/apache.svg",
+        "/tech-stack/postgresql.svg",
+        "/tech-stack/nginx.svg",
       ],
       gridArea: "itgrid three shadow md:col-span-2 md:row-span-1",
     },
-
     {
-      src: "images/bkad.webp",
+      src: "images/refmed.webp",
       tech: [
         "/tech-stack/laravel.svg",
         "/tech-stack/bootstrap.svg",
         "/tech-stack/mysql.svg",
-        "/tech-stack/apache.svg",
+        "/tech-stack/nginx.svg",
       ],
       gridArea: "itgrid four shadow md:col-span-2 md:row-span-1",
     },
     {
-      src: "images/bkad.webp",
+      src: "images/plantsasri.webp",
       tech: [
-        "/tech-stack/express.svg",
-        "/tech-stack/next.svg",
-        "/tech-stack/tailwind.svg",
-        "/tech-stack/mongodb.svg",
-        "/tech-stack/nginx.svg",
+
+
+        "/tech-stack/laravel.svg",
+        "/tech-stack/bootstrap.svg",
+        "/tech-stack/firebase.svg",
+        "/tech-stack/mysql.svg",
+        "/tech-stack/apache.svg",
+        "/tech-stack/MIDTRANS.jpg",
+        "/tech-stack/stripe.svg",
+        "/tech-stack/paypal.svg",
+
+        // "/tech-stack/express.svg",
+        // "/tech-stack/next.svg",
+        // "/tech-stack/tailwind.svg",
+        // "/tech-stack/mongodb.svg",
+        // "/tech-stack/nginx.svg",
       ],
       gridArea: "itgrid five shadow md:col-span-2 md:row-span-2 bg-top",
     },
     {
-      src: "images/bkad.webp",
+      src: "images/simpol.webp",
       tech: [
         "/tech-stack/laravel.svg",
+        "/tech-stack/php.svg",
         "/tech-stack/bootstrap.svg",
         "/tech-stack/mysql.svg",
+        "/tech-stack/apache.svg",
       ],
       gridArea: "itgrid six shadow md:col-span-2 md:row-span-1",
     },
-
     {
-      src: "images/bkad.webp",
+      src: "images/sidak.webp",
       tech: [
-        "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
+        "/tech-stack/express.svg",
+        "/tech-stack/next.svg",
+        "/tech-stack/tailwind.svg",
         "/tech-stack/firebase.svg",
-        "/tech-stack/mysql.svg",
-        "/tech-stack/apache.svg",
-        "/tech-stack/MIDTRANS.jpg",
-        "/tech-stack/stripe.svg",
-        "/tech-stack/paypal.svg",
+        "/tech-stack/postgresql.svg",
+        "/tech-stack/nginx.svg",
       ],
       gridArea: "itgrid seven md:col-span-2 md:row-span-2 bg-top shadow",
     },
     {
-      src: "images/bkad.webp",
+      src: "images/gencerling.webp",
       tech: [
         "/tech-stack/laravel.svg",
         "/tech-stack/bootstrap.svg",
-        "/tech-stack/flutter.svg",
         "/tech-stack/mysql.svg",
+        "/tech-stack/s3.svg",
         "/tech-stack/apache.svg",
-        "/tech-stack/MIDTRANS.jpg",
       ],
-      gridArea: "itgrid eight md:col-span-2 md:row-span-1 shadow",
+      gridArea: "itgrid eight md:col-span-2 md:row-span-2 bg-top shadow",
     },
     {
-      src: "images/bkad.webp",
+      src: "images/mpp1.webp",
       tech: [
         "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
+        "/tech-stack/tailwind.svg",
         "/tech-stack/flutter.svg",
-        "/tech-stack/mysql.svg",
-        "/tech-stack/apache.svg",
-        "/tech-stack/MIDTRANS.jpg",
-      ],
-      gridArea: "itgrid nine md:col-span-2 md:row-span-1 shadow",
-    },
-
-    {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
-        "/tech-stack/mysql.svg",
         "/tech-stack/firebase.svg",
-        "/tech-stack/MIDTRANS.jpg",
-        "/tech-stack/stripe.svg",
-        "/tech-stack/paypal.svg",
-      ],
-      gridArea: "itgrid ten md:col-span-2 md:row-span-1 bg-top shadow",
-    },
-    {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
-        "/tech-stack/flutter.svg",
         "/tech-stack/mysql.svg",
-        "/tech-stack/MIDTRANS.jpg",
+        "/tech-stack/nginx.svg",
       ],
       gridArea: "itgrid eleven md:col-span-1 md:row-span-2 shadow",
     },
     {
-      src: "images/bkad.webp",
+      src: "images/mpp2.webp",
       tech: [
         "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
+        "/tech-stack/tailwind.svg",
         "/tech-stack/flutter.svg",
+        "/tech-stack/firebase.svg",
         "/tech-stack/mysql.svg",
-        "/tech-stack/MIDTRANS.jpg",
+        "/tech-stack/nginx.svg",
       ],
       gridArea: "itgrid twelve md:col-span-1 md:row-span-2 shadow",
     },
     {
-      src: "images/bkad.webp",
+      src: "images/redhunter-page.webp",
       tech: [
         "/tech-stack/laravel.svg",
+        "/tech-stack/flask.svg",
+        "/tech-stack/next.svg",
+        "/tech-stack/appium.png",
+        "/tech-stack/selenium.svg",
         "/tech-stack/tailwind.svg",
-        "/tech-stack/mysql.svg",
+        "/tech-stack/postgresql.svg",
+        "/tech-stack/mongodb.svg",
         "/tech-stack/apache.svg",
       ],
-      gridArea: "itgrid thirteen md:col-span-2 md:row-span-1 shadow bg-top",
+      gridArea: "itgrid thirteen md:col-span-2 md:row-span-2 shadow bg-top",
     },
 
+
+
+
+
+
+
     {
-      src: "images/bkad.webp",
+      src: "images/branding-ABL.webp",
       tech: [
-        "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
-        "/tech-stack/mysql.svg",
-        "/tech-stack/apache.svg",
-      ],
-      gridArea: "itgrid fourteen md:col-span-2 md:row-span-2 bg-top shadow",
-    },
-    {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/flask.svg",
-        "/tech-stack/react.svg",
-        "/tech-stack/tailwind.svg",
-        "/tech-stack/postgresql.svg",
-        "/tech-stack/nginx.svg",
-      ],
-      gridArea: "itgrid fiveteen md:col-span-2 md:row-span-1 bg-top shadow",
-    },
-    {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/next.svg",
-        "/tech-stack/ant.svg",
-        "/tech-stack/postgresql.svg",
-        "/tech-stack/nginx.svg",
+        "/tech-stack/youtube.svg",
       ],
       gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
     },
 
     {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
-        "/tech-stack/mysql.svg",
-        "/tech-stack/firebase.svg",
-        "/tech-stack/apache.svg",
-      ],
-      gridArea: "itgrid seventeen md:col-span-2 md:row-span-1 bg-top shadow",
-    },
-    {
-      src: "images/bkad.webp",
-      tech: ["/tech-stack/flutter.svg"],
-      gridArea: "itgrid  eighteen md:col-span-1 md:row-span-2 shadow",
-    },
-    {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
-        ,
-        "/tech-stack/mysql.svg",
-        "/tech-stack/apache.svg",
-      ],
-      gridArea: "itgrid nineteen md:col-span-1 md:row-span-2 shadow",
-    },
-    {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/laravel.svg",
-        "/tech-stack/react.svg",
-        "/tech-stack/bootstrap.svg",
-        "/tech-stack/apache.svg",
-        "/tech-stack/xendit.svg",
-      ],
-      gridArea: "itgrid twenty md:col-span-2 md:row-span-2 shadow",
-    },
+        src: "images/branding-DJP.webp",
+        tech: [
+            "/tech-stack/youtube.svg",
 
-    {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/express.svg",
-        "/tech-stack/next.svg",
-        "/tech-stack/tailwind.svg",
-        "/tech-stack/postgresql.svg",
-        "/tech-stack/mongodb.svg",
-        "/tech-stack/apache.svg",
-      ],
-      gridArea: "itgrid twentyone md:col-span-2 md:row-span-2 bg-top shadow",
-    },
-    {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
-        "/tech-stack/mysql.svg",
-        "/tech-stack/firebase.svg",
-        "/tech-stack/apache.svg",
-      ],
-      gridArea: "itgrid  twentytwo md:col-span-2 md:row-span-1 shadow",
-    },
-    {
-      src: "images/bkad.webp",
-      tech: [
-        "/tech-stack/laravel.svg",
-        "/tech-stack/bootstrap.svg",
-        "/tech-stack/mysql.svg",
-        "/tech-stack/firebase.svg",
-        "/tech-stack/apache.svg",
-      ],
-      gridArea: "itgrid bg-top twentythree md:col-span-2 md:row-span-2 shadow",
-    },
+        ],
+        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+      },
+      {
+        src: "images/branding-IPB.webp",
+        tech: [
+            "/tech-stack/youtube.svg",
+
+        ],
+        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+      },
+      {
+        src: "images/branding-kemensos.webp",
+        tech: [
+            "/tech-stack/youtube.svg",
+
+        ],
+        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+      },
+  
+      {
+        src: "images/branding-dokter-siska.webp",
+        tech: [
+            "/tech-stack/youtube.svg",
+
+        ],
+        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+      },
+      {
+        src: "images/branding-Travel-wifi.webp",
+        tech: [
+            "/tech-stack/youtube.svg",
+
+        ],
+        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+      },
+      {
+        src: "images/scindapsus.webp",
+        tech: [
+            "/tech-stack/laravel.svg",
+            "/tech-stack/php.svg",
+            "/tech-stack/mysql.svg",
+            "/tech-stack/apache.svg",
+        ],
+        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+      },
+  
+      {
+        src: "images/plab.png",
+        tech: [
+          "/tech-stack/laravel.svg",
+          "/tech-stack/php.svg",
+          "/tech-stack/mysql.svg",
+          "/tech-stack/apache.svg",
+        ],
+        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+      },
+      {
+        src: "images/smk3.png",
+        tech: [
+          "/tech-stack/next.svg",
+          "/tech-stack/antdesign.svg",
+          "/tech-stack/postgresql.svg",
+          "/tech-stack/nginx.svg",
+        ],
+        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+      },
+  
+      
   ];
 
   const ref = useRef(null);
@@ -291,7 +265,7 @@ const Portfolio = () => {
     },
   };
 
-  const imagesPerPage = [6, 7, 7, 7]; // Jumlah gambar per halaman
+  const imagesPerPage = [6, 5, 8, 7]; // Jumlah gambar per halaman
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = imagesPerPage.length; // Jumlah total halaman
@@ -327,9 +301,9 @@ const Portfolio = () => {
 
   return (
     <div id="portfolio" className="w-full px-4 sm:w-[90%] md:w-[80%] mx-auto">
-         <br />
-         <br />
-         <br />
+      <br />
+      <br />
+      <br />
       <h1 className="text-3xl  text-center sm:text-5xl text-white font-bold md:text-[40px]">
         Our <span className="text-[#5e4bf5]">Works</span>
       </h1>
