@@ -326,7 +326,7 @@ const Portfolio = () => {
   }, [isScroll]);
 
   return (
-    <div className="w-full px-4 sm:w-[90%] md:w-[80%] mx-auto">
+    <div id="portfolio" className="w-full px-4 sm:w-[90%] md:w-[80%] mx-auto">
          <br />
          <br />
          <br />

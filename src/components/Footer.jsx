@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative text-white">
+    <footer id="contact" className="relative text-white">
       <div className="relative w-full bg-[url('/footer-pattern.webp')] bg-cover bg-center">
         <div className="container mx-auto px-4 py-12">
           {/* Desktop Layout */}

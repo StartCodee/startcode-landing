@@ -30,7 +30,7 @@ export default function Services() {
   ];
 
   return (
-    <>
+    <div id="services">
       <br />
       <br />
       <br />
@@ -75,6 +75,6 @@ export default function Services() {
       <br />
       <br />
       <br />
-    </>
+    </div>
   );
 }

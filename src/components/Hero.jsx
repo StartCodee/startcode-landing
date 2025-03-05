@@ -5,7 +5,7 @@ import RotatingText from "../blocks/TextAnimations/RotatingText/RotatingText";
 export default function Hero() {
   return (
     <>
-      <div className="relative w-full bg-[url('/grid-pattern.webp')] bg-cover bg-center">
+      <div id="home" className="relative w-full bg-[url('/grid-pattern.webp')] bg-cover bg-center">
         {/* Spotlight di kanan atas */}
 
         {/* Konten Hero */}
@@ -88,7 +88,7 @@ export default function Hero() {
 
       <br />
       <br />
-      <div className="w-full px-4 sm:w-[90%] md:w-[80%] mx-auto">
+      <div id="about" className="w-full px-4 sm:w-[90%] md:w-[80%] mx-auto">
         {/* First Row of Cards */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 mb-4 sm:mb-6">
           {/* Left Large Card */}
