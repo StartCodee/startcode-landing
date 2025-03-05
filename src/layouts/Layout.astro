@@ -1,4 +1,6 @@
 ---
+import Navbar from "../components/Navbar";
+
 const siteUrl = "https://startcode.id";
 const siteTitle = "STARTCODE - Digital Solutions for Your Business";
 const siteDescription = "Startcode helps businesses with cutting-edge digital solutions including web development, mobile apps, and AI-driven software.";
@@ -53,6 +55,8 @@ const imageUrl = "/startcode.svg";
 		</script>
 	</head>
 	<body>
+	<Navbar client:load />
+
 		<slot />
 	</body>
 </html>

@@ -6,7 +6,7 @@ const GridMotion = ({ items = [], gradientColor = "black" }) => {
   const rowRefs = useRef([]); // Array of refs for each row
 
   // Ensure the grid has 28 items (4 rows x 7 columns) by default
-  const totalItems = 28;
+  const totalItems = 14;
   const defaultItems = Array.from(
     { length: totalItems },
     (_, index) => `Item ${index + 1}`

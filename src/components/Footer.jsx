@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="hidden md:flex flex-col items-center justify-center text-center text-white">
             <div className="flex justify-between w-full space-x-8">
               {/* Left Column - Logo */}
-              <div className="flex-1 flex flex-col items-start">
+              <div className="flex-1 flex flex-col items-start justify-end">
                 <img
                   src="/scode.webp"
                   alt="Startcode Logo"
@@ -58,7 +58,7 @@ export default function Footer() {
               </div>
 
               {/* Right Column - Addresses */}
-              <div className="flex-1 text-right">
+              <div className="flex-1 text-right" style={{display:'flex',alignItems:'end'}}>
                 <p className="text-gray-400 mt-2">
                   <strong>Jakarta Office:</strong><br />
                   Plaza Aminta, Jalan Let. Jen. TB Simatupang No.Kav.10, Lantai 5/504, RT.06/RW.14, Pd. Pinang, Kec. Kby. Lama, Kota Jakarta Selatan, DKI Jakarta 12310
