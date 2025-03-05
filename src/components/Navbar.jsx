@@ -15,14 +15,30 @@ export default function Navbar() {
   const navItems = [
     { icon: FaHome, label: "Home", href: "#home" },
     { icon: FaUser, label: "About", href: "#about" },
-    { icon: FaBriefcase, label: "Services", href: "#services" },
     { icon: FaCode, label: "Portfolio", href: "#portfolio" },
+    { icon: FaBriefcase, label: "Services", href: "#services" },
     { icon: FaEnvelope, label: "Contact", href: "#contact" },
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+
+  const handleSmoothScroll = (e, href) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const offset = -70; // Sesuaikan offset agar tidak tertutup navbar
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY + offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+      setIsMenuOpen(false);
+    }
+  };
+
 
   return (
     <nav className="fixed z-50 w-full mt-5 top-0 left-0 px-4">
@@ -62,6 +78,7 @@ export default function Navbar() {
                 <a
                   key={index}
                   href={item.href}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
                   className="
                   flex 
                   items-center 

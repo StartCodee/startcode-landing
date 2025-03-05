@@ -81,14 +81,18 @@ export default function Hero() {
       </div>
 
       {/* Spotlight di kanan atas */}
+      <div id="about">
 
-      <h1 className="text-3xl  text-center sm:text-5xl text-white font-bold md:text-[40px]">
+      </div>
+<br />
+<br />
+      <h1  className="text-3xl  text-center sm:text-5xl text-white font-bold md:text-[40px]">
         About <span className="text-[#5e4bf5]">Us</span>
       </h1>
 
       <br />
       <br />
-      <div id="about" className="w-full px-4 sm:w-[90%] md:w-[80%] mx-auto">
+      <div  className="w-full px-4 sm:w-[90%] md:w-[80%] mx-auto">
         {/* First Row of Cards */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 mb-4 sm:mb-6">
           {/* Left Large Card */}
