@@ -6,6 +6,30 @@ body {
 }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); }
 
+
+/* Pengaturan untuk komponen RotatingText */
+.rotating-text-container {
+    min-height: 72px;
+    min-width: 200px;
+    display: inline-block;
+  }
+  
+  /* Ukuran gambar client logo */
+  .client-logo {
+    aspect-ratio: 4/1;
+    height: auto;
+  }
+  
+  /* Pre-loading gambar logo untuk menghindari layout shift */
+  .preload-images {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  
 @media only screen and (max-width: 600px) {
     .one {
         grid-area: 1 / 1 / span 1 / span 4;

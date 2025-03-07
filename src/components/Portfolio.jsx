@@ -54,7 +54,7 @@ const Portfolio = () => {
         "/tech-stack/firebase.svg",
         "/tech-stack/mysql.svg",
         "/tech-stack/apache.svg",
-        "/tech-stack/MIDTRANS.jpg",
+        "/tech-stack/MIDTRANS.webp",
         "/tech-stack/stripe.svg",
         "/tech-stack/paypal.svg",
 
