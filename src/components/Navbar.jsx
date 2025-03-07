@@ -130,6 +130,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button
+            aria-label="Toggle Menu"
               onClick={toggleMenu}
               className="
                text-white 
@@ -139,6 +140,7 @@ export default function Navbar() {
               duration-300
             "
             >
+               <span className="sr-only">Hamburger Bar</span>
               {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
