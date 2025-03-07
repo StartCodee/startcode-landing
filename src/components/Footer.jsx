@@ -49,10 +49,18 @@ export default function Footer() {
                   <p className="text-gray-400">Email: startcodedigital@gmail.com</p>
                   <p className="text-gray-400">Telp: +62 8953 3149 3506</p>
                   <div className="flex gap-4 mt-4 justify-center">
-                    <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaFacebook /></a>
-                    <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaInstagram /></a>
-                    <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaLinkedin /></a>
-                    <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaWhatsapp /></a>
+                    <a href="#" aria-label="Kunjungi Link" className="text-gray-400 hover:text-white text-2xl">
+                       <span className="sr-only">Kunjungi Link</span>
+                      <FaFacebook /></a>
+                    <a href="#" aria-label="Kunjungi Link" className="text-gray-400 hover:text-white text-2xl">
+                       <span className="sr-only">Kunjungi Link</span>
+                      <FaInstagram /></a>
+                    <a href="#" aria-label="Kunjungi Link" className="text-gray-400 hover:text-white text-2xl">
+                       <span className="sr-only">Kunjungi Link</span>
+                      <FaLinkedin /></a>
+                    <a href="#" aria-label="Kunjungi Link" className="text-gray-400 hover:text-white text-2xl">
+                       <span className="sr-only">Kunjungi Link</span>
+                      <FaWhatsapp /></a>
                   </div>
                 </div>
               </div>
@@ -104,10 +112,18 @@ export default function Footer() {
               <p className="text-gray-400">Email: startcodedigital@gmail.com</p>
               <p className="text-gray-400">Telp: +62 8953 3149 3506</p>
               <div className="flex gap-4 mt-4 justify-center">
-                <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaFacebook /></a>
-                <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaInstagram /></a>
-                <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaLinkedin /></a>
-                <a href="#" className="text-gray-400 hover:text-white text-2xl"><FaWhatsapp /></a>
+                <a href="#" aria-label="Kunjungi Link" className="text-gray-400 hover:text-white text-2xl">
+                   <span className="sr-only">Kunjungi Link</span>
+                  <FaFacebook /></a>
+                <a href="#" aria-label="Kunjungi Link" className="text-gray-400 hover:text-white text-2xl">
+                   <span className="sr-only">Kunjungi Link</span>
+                  <FaInstagram /></a>
+                <a href="#" aria-label="Kunjungi Link" className="text-gray-400 hover:text-white text-2xl">
+                   <span className="sr-only">Kunjungi Link</span>
+                  <FaLinkedin /></a>
+                <a href="#" aria-label="Kunjungi Link" className="text-gray-400 hover:text-white text-2xl">
+                   <span className="sr-only">Kunjungi Link</span>
+                  <FaWhatsapp /></a>
               </div>
             </div>
 

@@ -11,7 +11,7 @@ export default function Hero() {
         {/* Konten Hero */}
         <div className="flex justify-center h-[100vh] ">
           <div className="relative z-10 text-white p-10 mt-[200px]">
-            <h1 className="text-3xl sm:text-5xl md:text-[72px] font-bold flex items-center justify-center text-center">
+            {/* <h1 className="text-3xl sm:text-5xl md:text-[72px] font-bold flex items-center justify-center text-center">
               Revolutionize Your{" "}
             </h1>
 
@@ -31,7 +31,7 @@ export default function Hero() {
                   rotationInterval={2000}
                 />
               </span>
-            </h1>
+            </h1> */}
 
             <p className="mt-4 text-base sm:text-lg text-center justify-center">
               Transform and accelerate the growth of your digital business with{" "}

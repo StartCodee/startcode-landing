@@ -49,8 +49,6 @@ const Portfolio = () => {
     {
       src: "images/plantsasri.webp",
       tech: [
-
-
         "/tech-stack/laravel.svg",
         "/tech-stack/bootstrap.svg",
         "/tech-stack/firebase.svg",
@@ -142,94 +140,69 @@ const Portfolio = () => {
       gridArea: "itgrid thirteen md:col-span-2 md:row-span-2 shadow bg-top",
     },
 
-
-
-
-
-
-
     {
       src: "images/branding-ABL.webp",
+      tech: ["/tech-stack/youtube.svg"],
+      gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+    },
+
+    {
+      src: "images/branding-DJP.webp",
+      tech: ["/tech-stack/youtube.svg"],
+      gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+    },
+    {
+      src: "images/branding-IPB.webp",
+      tech: ["/tech-stack/youtube.svg"],
+      gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+    },
+    {
+      src: "images/branding-kemensos.webp",
+      tech: ["/tech-stack/youtube.svg"],
+      gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+    },
+
+    {
+      src: "images/branding-dokter-siska.webp",
+      tech: ["/tech-stack/youtube.svg"],
+      gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+    },
+    {
+      src: "images/branding-Travel-wifi.webp",
+      tech: ["/tech-stack/youtube.svg"],
+      gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+    },
+    {
+      src: "images/scindapsus.webp",
       tech: [
-        "/tech-stack/youtube.svg",
+        "/tech-stack/laravel.svg",
+        "/tech-stack/php.svg",
+        "/tech-stack/mysql.svg",
+        "/tech-stack/apache.svg",
       ],
       gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
     },
 
     {
-        src: "images/branding-DJP.webp",
-        tech: [
-            "/tech-stack/youtube.svg",
-
-        ],
-        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
-      },
-      {
-        src: "images/branding-IPB.webp",
-        tech: [
-            "/tech-stack/youtube.svg",
-
-        ],
-        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
-      },
-      {
-        src: "images/branding-kemensos.webp",
-        tech: [
-            "/tech-stack/youtube.svg",
-
-        ],
-        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
-      },
-  
-      {
-        src: "images/branding-dokter-siska.webp",
-        tech: [
-            "/tech-stack/youtube.svg",
-
-        ],
-        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
-      },
-      {
-        src: "images/branding-Travel-wifi.webp",
-        tech: [
-            "/tech-stack/youtube.svg",
-
-        ],
-        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
-      },
-      {
-        src: "images/scindapsus.webp",
-        tech: [
-            "/tech-stack/laravel.svg",
-            "/tech-stack/php.svg",
-            "/tech-stack/mysql.svg",
-            "/tech-stack/apache.svg",
-        ],
-        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
-      },
-  
-      {
-        src: "images/plab.png",
-        tech: [
-          "/tech-stack/laravel.svg",
-          "/tech-stack/php.svg",
-          "/tech-stack/mysql.svg",
-          "/tech-stack/apache.svg",
-        ],
-        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
-      },
-      {
-        src: "images/smk3.png",
-        tech: [
-          "/tech-stack/next.svg",
-          "/tech-stack/antdesign.svg",
-          "/tech-stack/postgresql.svg",
-          "/tech-stack/nginx.svg",
-        ],
-        gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
-      },
-  
-      
+      src: "images/plab.png",
+      tech: [
+        "/tech-stack/laravel.svg",
+        "/tech-stack/php.svg",
+        "/tech-stack/mysql.svg",
+        "/tech-stack/apache.svg",
+      ],
+      gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+    },
+    {
+      src: "images/smk3.png",
+      tech: [
+        "/tech-stack/next.svg",
+        "/tech-stack/antdesign.svg",
+        "/tech-stack/postgresql.svg",
+        "/tech-stack/nginx.svg",
+      ],
+      gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
+    },
   ];
 
   const ref = useRef(null);
@@ -340,10 +313,13 @@ const Portfolio = () => {
         </div>
         <div className="flex justify-end mt-4 space-x-4">
           <button
+            aria-label="Prev portofolio"
+            
             onClick={handlePrevPage}
             disabled={currentPage === 1}
             className="px-4 py-2 bg-[#1bacdc] text-white rounded disabled:bg-gray-300"
           >
+             <span className="sr-only">Prev portofolio</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -356,10 +332,12 @@ const Portfolio = () => {
             </svg>
           </button>
           <button
+          aria-label="Next portofolio"
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
             className="px-4 py-2 bg-[#1bacdc] text-white rounded disabled:bg-gray-300"
           >
+             <span className="sr-only">Next portofolio</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
