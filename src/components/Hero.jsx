@@ -59,45 +59,47 @@ export default function Hero() {
             {/* Mengganti multiple <br /> dengan container yang memiliki height tetap */}
             <div style={{ height: "200px" }} aria-hidden="true"></div>
 
-            <div
-              className="flex-5 border-l-[6px] border-[#5e4bf5] flex items-center"
-              style={{ minHeight: "40px" }}
-            >
-              <p className="text-white text-[20px] mt-1 font-medium w-80 ml-[20px]">
-                Meet our featured clients
-              </p>
-            </div>
+            <div className="w-full px-4 sm:w-[90%] md:w-[80%] mx-auto">
+              <div
+                className="flex-5 border-l-[6px] border-[#5e4bf5] flex items-center"
+                style={{ minHeight: "40px" }}
+              >
+                <p className="text-white text-[20px] mt-1 font-medium w-80 ml-[20px]">
+                  Meet our featured clients
+                </p>
+              </div>
 
-            <div
-              className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10 mt-6"
-              style={{ minHeight: "100px" }}
-            >
-              {[
-                "plantsasriLogo.webp",
-                "tni.webp",
-                "ipb.svg",
-                "moodprimalogo.webp",
-                "logosmkn3.webp",
-                "djp.webp",
-                "sulteng-logo.webp",
-                "mpp-logo.webp",
-                "bonet.webp",
-                "smkn4.svg",
-                "logo-bkad.webp",
-                "bi.webp",
-                "travelwifi.webp",
-              ].map((logo, index) => (
-                <img
-                  key={index}
-                  src={logo}
-                  loading="lazy"
-                  className="h-6 sm:h-8 md:h-[30px] object-contain"
-                  alt={`Client Logo ${index + 1}`}
-                  width="120"
-                  height="30"
-                  style={{ aspectRatio: "4/1" }}
-                />
-              ))}
+              <div
+                className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10 mt-6"
+                style={{ minHeight: "100px" }}
+              >
+                {[
+                  "plantsasriLogo.webp",
+                  "tni.webp",
+                  "ipb.svg",
+                  "moodprimalogo.webp",
+                  "logosmkn3.webp",
+                  "djp.webp",
+                  "sulteng-logo.webp",
+                  "mpp-logo.webp",
+                  "bonet.webp",
+                  "smkn4.svg",
+                  "logo-bkad.webp",
+                  "bi.webp",
+                  "travelwifi.webp",
+                ].map((logo, index) => (
+                  <img
+                    key={index}
+                    src={logo}
+                    loading="lazy"
+                    className="h-6 sm:h-8 md:h-[30px] object-contain"
+                    alt={`Client Logo ${index + 1}`}
+                    width="120"
+                    height="30"
+                    style={{ aspectRatio: "4/1" }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
