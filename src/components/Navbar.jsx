@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaHome,
   FaUser,
@@ -11,6 +11,7 @@ import {
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
 
   const navItems = [
     { icon: FaHome, label: "Home", href: "#home" },
@@ -29,47 +30,59 @@ export default function Navbar() {
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
-      const offset = -70; // Sesuaikan offset agar tidak tertutup navbar
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY + offset;
-      window.scrollTo({
-        top: targetPosition,
+      target.scrollIntoView({
         behavior: "smooth",
+        block: "start",
       });
       setIsMenuOpen(false);
     }
   };
 
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY === 0); // true jika scroll di atas
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
   return (
-    <nav className="fixed z-50 w-full mt-5 top-0 left-0 px-4">
+    <nav className="fixed z-50 w-full top-0 left-0">
       {/* Navbar untuk Laptop dan Tablet */}
-      <div className="hidden sm:block max-w-5xl mx-auto sm:w-3/4 md:w-2/3 lg:w-1/2">
+      <div className={`hidden sm:block mx-auto transition-all duration-500 ease-in-out ${isAtTop ? "w-full" : "sm:w-3/4 md:w-2/3 lg:w-1/2 "}`}>
         <div className="relative">
           {/* Glassmorphism Container */}
           <div
-            className="
-          bg-white/30 
-          backdrop-blur-lg 
-          border border-white/20 
-          shadow-lg 
-          rounded-2xl 
+            className={`
+            ${isAtTop
+                ? "w-full bg-transparent"
+                : "mt-0 bg-[#242539]/16 border border-white/20 backdrop-blur-lg shadow-lg"
+              }
+          transition-all 
+          duration-500 
+          ease-in-out
+          rounded-2xl
           overflow-hidden
-          absolute 
+          absolute
           inset-0
           -z-10
-        "
+          `}
           ></div>
 
           {/* Navbar Content */}
-          <div className="relative z-10 flex justify-between items-center p-3">
+          <div className="w-full relative z-10 flex justify-between items-center px-12 py-4">
             {/* Logo */}
-            <div>
+            <div className="flex gap-4 justify-center items-center">
               <img
-                src="/scode.webp"
+                src="/StartCode.png"
                 className="w-[50px] h-[50px]"
                 style={{ borderRadius: "10px" }}
                 alt="Logo"
               />
+              <p className="text-white font-bold text-xl">StartCode</p>
             </div>
 
             {/* Navigation */}
@@ -82,7 +95,7 @@ export default function Navbar() {
                   className="
                   flex 
                   items-center 
-                  space-x-2 
+                  space-x-8 
                   text-white 
                   hover:text-[#5e4bf5] 
                   transition-colors 
@@ -90,7 +103,7 @@ export default function Navbar() {
                   text-sm
                 "
                 >
-                  <item.icon size={16} />
+                  {/* <item.icon size={16} /> */}
                   <span className="hidden md:inline">{item.label}</span>
                 </a>
               ))}
@@ -105,7 +118,7 @@ export default function Navbar() {
           {/* Glassmorphism Container */}
           <div
             className="
-          bg-white/30 
+          bg-[#242539]/16  
           backdrop-blur-lg 
           border border-white/20 
           shadow-lg 
@@ -130,7 +143,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle */}
             <button
-            aria-label="Toggle Menu"
+              aria-label="Toggle Menu"
               onClick={toggleMenu}
               className="
                text-white 
@@ -140,7 +153,7 @@ export default function Navbar() {
               duration-300
             "
             >
-               <span className="sr-only">Hamburger Bar</span>
+              <span className="sr-only">Hamburger Bar</span>
               {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
@@ -186,6 +199,6 @@ export default function Navbar() {
           )}
         </div>
       </div>
-    </nav>
+    </nav >
   );
 }
