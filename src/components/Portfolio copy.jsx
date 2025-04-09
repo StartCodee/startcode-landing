@@ -4,7 +4,6 @@ import { motion, useAnimation, useInView } from "framer-motion";
 const Portfolio = () => {
   const images = [
     {
-      title: "ETWPAD",
       src: "/images/etwpad.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -17,7 +16,6 @@ const Portfolio = () => {
       gridArea: "itgrid one shadow md:col-span-2 bg-top md:row-span-2",
     },
     {
-      title: "BKAD",
       src: "images/bkad.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -28,7 +26,6 @@ const Portfolio = () => {
       gridArea: "itgrid two shadow md:col-span-2 md:row-span-1 bg-top",
     },
     {
-      title: "DMP",
       src: "images/DMP.webp",
       tech: [
         "/tech-stack/flask.svg",
@@ -40,7 +37,6 @@ const Portfolio = () => {
       gridArea: "itgrid three shadow md:col-span-2 md:row-span-1",
     },
     {
-      title: "REFMED",
       src: "images/refmed.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -51,7 +47,6 @@ const Portfolio = () => {
       gridArea: "itgrid four shadow md:col-span-2 md:row-span-1",
     },
     {
-      title: "Plantsari",
       src: "images/plantsasri.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -72,7 +67,6 @@ const Portfolio = () => {
       gridArea: "itgrid five shadow md:col-span-2 md:row-span-2 bg-top",
     },
     {
-      title: "SIMPOL",
       src: "images/simpol.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -84,7 +78,6 @@ const Portfolio = () => {
       gridArea: "itgrid six shadow md:col-span-2 md:row-span-1",
     },
     {
-      title: "SIDAK",
       src: "images/sidak.webp",
       tech: [
         "/tech-stack/express.svg",
@@ -97,7 +90,6 @@ const Portfolio = () => {
       gridArea: "itgrid seven md:col-span-2 md:row-span-2 bg-top shadow",
     },
     {
-      title: "GENCERLING",
       src: "images/gencerling.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -109,7 +101,6 @@ const Portfolio = () => {
       gridArea: "itgrid eight md:col-span-2 md:row-span-2 bg-top shadow",
     },
     {
-      title: "MPP",
       src: "images/mpp1.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -122,7 +113,6 @@ const Portfolio = () => {
       gridArea: "itgrid eleven md:col-span-1 md:row-span-2 shadow",
     },
     {
-      title: "MPP",
       src: "images/mpp2.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -135,7 +125,6 @@ const Portfolio = () => {
       gridArea: "itgrid twelve md:col-span-1 md:row-span-2 shadow",
     },
     {
-      title: "Red Hunter",
       src: "images/redhunter-page.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -152,45 +141,38 @@ const Portfolio = () => {
     },
 
     {
-      title: "ABL",
       src: "images/branding-ABL.webp",
       tech: ["/tech-stack/youtube.svg"],
       gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
     },
 
     {
-      title: "DJP",
       src: "images/branding-DJP.webp",
       tech: ["/tech-stack/youtube.svg"],
       gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
     },
     {
-      title: "IPB",
       src: "images/branding-IPB.webp",
       tech: ["/tech-stack/youtube.svg"],
       gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
     },
     {
-      title: "Kemensos",
       src: "images/branding-kemensos.webp",
       tech: ["/tech-stack/youtube.svg"],
       gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
     },
 
     {
-      title: "Dokter Siska",
       src: "images/branding-dokter-siska.webp",
       tech: ["/tech-stack/youtube.svg"],
       gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
     },
     {
-      title: "Travel Wifi",
       src: "images/branding-Travel-wifi.webp",
       tech: ["/tech-stack/youtube.svg"],
       gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
     },
     {
-      title: "Scindapsus",
       src: "images/scindapsus.webp",
       tech: [
         "/tech-stack/laravel.svg",
@@ -202,7 +184,6 @@ const Portfolio = () => {
     },
 
     {
-      title: "PLAB",
       src: "images/plab.png",
       tech: [
         "/tech-stack/laravel.svg",
@@ -213,7 +194,6 @@ const Portfolio = () => {
       gridArea: "itgrid sixteen md:col-span-2 md:row-span-1 bg-top shadow",
     },
     {
-      title: "SMKN 3 Bogor",
       src: "images/smk3.png",
       tech: [
         "/tech-stack/next.svg",
@@ -310,26 +290,22 @@ const Portfolio = () => {
         variants={dataProjectsVariants}
         className="w-full mx-auto mt-10"
       >
-        <div className="gallery grid gap-5 grid-cols-4 sm:grid-rows-[repeat(6,1fr)] h-[1400px] md:grid-cols-2 md:grid-rows-[repeat(4,1fr)]">
+        <div className="gallery grid gap-5 grid-cols-4 sm:grid-rows-[repeat(6,1fr)] h-[1400px] md:grid-cols-4 md:grid-rows-[repeat(4,1fr)]">
           {currentImages.map((image, index) => (
-            <div className="flex flex-col border border-[#202131] rounded-lg p-8 gap-6">
-              <div className="bg-radial from-[#1B2E50] from-40% to-[#13162D] pt-6 px-12 rounded-lg w-full h-60 overflow-hidden">
-                <img src={image.src} alt="" className="rounded-lg" />
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-white text-md font-semibold">{image.title}</p>
-                <p className="text-white">Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.</p>
-              </div>
-              <div className="flex">
-              {image.tech.map((techLogo, techIndex) => (
-                  <div className="border border-[#22253D] rounded-full p-2">
+            <div
+              key={index}
+              className={`relative bg-cover bg-center rounded-xl flex justify-center items-center transition duration-500 ease-in-out group ${image.gridArea}`}
+              style={{ backgroundImage: `url(${image.src})` }}
+            >
+              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 rounded-xl transition duration-500 ease-in-out"></div>
+              <div className="absolute bottom-2 right-2 flex gap-2 space-x-2 opacity-0 group-hover:opacity-100 transition duration-500 ease-in-out bg-white rounded px-2 py-1">
+                {image.tech.map((techLogo, techIndex) => (
                   <img
                     key={techIndex}
                     src={techLogo}
                     alt="Tech Logo"
-                    className="h-6 w-6"
+                    className="h-8 w-8"
                   />
-                  </div>
                 ))}
               </div>
             </div>
@@ -338,12 +314,12 @@ const Portfolio = () => {
         <div className="flex justify-end mt-4 space-x-4">
           <button
             aria-label="Prev portofolio"
-
+            
             onClick={handlePrevPage}
             disabled={currentPage === 1}
             className="px-4 py-2 bg-[#1bacdc] text-white rounded disabled:bg-gray-300"
           >
-            <span className="sr-only">Prev portofolio</span>
+             <span className="sr-only">Prev portofolio</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -356,12 +332,12 @@ const Portfolio = () => {
             </svg>
           </button>
           <button
-            aria-label="Next portofolio"
+          aria-label="Next portofolio"
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
             className="px-4 py-2 bg-[#1bacdc] text-white rounded disabled:bg-gray-300"
           >
-            <span className="sr-only">Next portofolio</span>
+             <span className="sr-only">Next portofolio</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
