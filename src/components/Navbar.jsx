@@ -52,7 +52,7 @@ export default function Navbar() {
   return (
     <nav className="fixed z-50 w-full top-0 left-0">
       {/* Navbar untuk Laptop dan Tablet */}
-      <div className={`hidden sm:block mx-auto transition-all duration-500 ease-in-out ${isAtTop ? "w-full" : "sm:w-3/4 md:w-2/3 lg:w-1/2 "}`}>
+      <div className={`hidden sm:block mx-auto py-2 transition-all duration-500 ease-in-out ${isAtTop ? "w-full" : "sm:w-3/4 md:w-2/3 lg:w-1/2 "}`}>
         <div className="relative">
           {/* Glassmorphism Container */}
           <div
@@ -78,7 +78,7 @@ export default function Navbar() {
             <div className="flex gap-4 justify-center items-center">
               <img
                 src="/StartCode.png"
-                className="w-[50px] h-[50px]"
+                className="w-[35px] h-[35px]"
                 style={{ borderRadius: "10px" }}
                 alt="Logo"
               />
