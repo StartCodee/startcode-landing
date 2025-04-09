@@ -20,7 +20,7 @@ export default function Footer() {
               {/* Left Column - Logo */}
               <div className="flex-1 flex flex-col items-start justify-end">
                 <img
-                  src="/scode.webp"
+                  src="/StartCode-lg.png"
                   alt="Startcode Logo"
                   className="w-32 mb-4"
                 />
