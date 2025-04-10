@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Portfolio = () => {
   const images = [
@@ -259,25 +260,25 @@ const Portfolio = () => {
   };
 
   const imagesPerPage = 6;
-const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
-// Hitung total halaman berdasarkan jumlah gambar
-const totalPages = Math.ceil(images.length / imagesPerPage);
+  // Hitung total halaman berdasarkan jumlah gambar
+  const totalPages = Math.ceil(images.length / imagesPerPage);
 
-// Navigasi ke halaman sebelumnya
-const handlePrevPage = () => {
-  setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-};
+  // Navigasi ke halaman sebelumnya
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+  };
 
-// Navigasi ke halaman berikutnya
-const handleNextPage = () => {
-  setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-};
+  // Navigasi ke halaman berikutnya
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+  };
 
-// Ambil gambar untuk halaman saat ini
-const indexOfFirstImage = (currentPage - 1) * imagesPerPage;
-const indexOfLastImage = currentPage * imagesPerPage;
-const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
+  // Ambil gambar untuk halaman saat ini
+  const indexOfFirstImage = (currentPage - 1) * imagesPerPage;
+  const indexOfLastImage = currentPage * imagesPerPage;
+  const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -324,38 +325,44 @@ const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
                 <p className="text-white">Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.</p>
               </div>
               <div className="flex">
-                {image.tech.map((techLogo, techIndex) => (
-                  <div className="border border-[#22253D] rounded-full p-2">
+                {image.tech.slice(0, 4).map((techLogo, techIndex) => (
+                  <div key={techIndex} className="bg-[#353B5D]/30 border border-[#22253D] rounded-full p-2">
                     <img
-                      key={techIndex}
                       src={techLogo}
                       alt="Tech Logo"
                       className="h-6 w-6"
                     />
                   </div>
                 ))}
+
+                {image.tech.length > 4 && (
+                  <div className="bg-[#353B5D]/30 border border-[#22253D] rounded-full p-2 flex items-center justify-center text-sm font-medium w-10 h-10 text-white">
+                    +{image.tech.length - 4}
+                  </div>
+                )}
+
               </div>
             </div>
           ))}
         </div>
         <div className="flex items-center justify-between mt-4 text-white">
-          
+
           <span>Page {currentPage} of {totalPages}</span>
           <div className="flex gap-4">
-          <button
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
-            className="px-4 py-2 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
-          >
-            Prev
-          </button>
-          <button
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-            className="px-4 py-2 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
-          >
-            Next
-          </button>
+            <button
+              onClick={handlePrevPage}
+              disabled={currentPage === 1}
+              className="px-4 py-4 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages}
+              className="px-4 py-4 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
+            >
+              <FaChevronRight />
+            </button>
           </div>
         </div>
 
