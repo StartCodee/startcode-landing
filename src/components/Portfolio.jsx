@@ -346,25 +346,54 @@ const Portfolio = () => {
           ))}
         </div>
         <div className="flex items-center justify-between mt-4 text-white">
+          <p>
+            Showing result {(currentPage - 1) * imagesPerPage + 1}
+            <span> - </span>
+            {Math.min(currentPage * imagesPerPage, images.length)}
+            <span> of </span>
+            {images.length}
+          </p>
 
-          <span>Page {currentPage} of {totalPages}</span>
-          <div className="flex gap-4">
+          <div className="flex items-center gap-2">
+            {/* Tombol Prev */}
             <button
               onClick={handlePrevPage}
               disabled={currentPage === 1}
-              className="px-4 py-4 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
+              className="px-3 py-3 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
             >
               <FaChevronLeft />
             </button>
+
+            {/* Tombol Angka Halaman */}
+            {[...Array(totalPages)].map((_, index) => {
+              const pageNumber = index + 1;
+              return (
+                <button
+                  key={pageNumber}
+                  onClick={() => setCurrentPage(pageNumber)}
+                  className={`px-3 py-2 rounded border transition-all
+            ${currentPage === pageNumber
+                      ? 'bg-white text-black font-bold'
+                      : 'bg-[#353B5D]/46 text-white border-white/40 hover:bg-white/30'
+                    }
+          `}
+                >
+                  {pageNumber}
+                </button>
+              );
+            })}
+
+            {/* Tombol Next */}
             <button
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
-              className="px-4 py-4 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
+              className="px-3 py-3 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
             >
               <FaChevronRight />
             </button>
           </div>
         </div>
+
 
       </motion.div>
     </div>
