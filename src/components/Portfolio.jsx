@@ -258,23 +258,26 @@ const Portfolio = () => {
     },
   };
 
-  const imagesPerPage = [6, 5, 8, 7]; // Jumlah gambar per halaman
-  const [currentPage, setCurrentPage] = useState(1);
+  const imagesPerPage = 6;
+const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = imagesPerPage.length; // Jumlah total halaman
+// Hitung total halaman berdasarkan jumlah gambar
+const totalPages = Math.ceil(images.length / imagesPerPage);
 
-  const handlePrevPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-  };
+// Navigasi ke halaman sebelumnya
+const handlePrevPage = () => {
+  setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+};
 
-  const handleNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-  };
+// Navigasi ke halaman berikutnya
+const handleNextPage = () => {
+  setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+};
 
-  const currentImages = images.slice(
-    imagesPerPage.slice(0, currentPage - 1).reduce((acc, val) => acc + val, 0),
-    imagesPerPage.slice(0, currentPage).reduce((acc, val) => acc + val, 0)
-  );
+// Ambil gambar untuk halaman saat ini
+const indexOfFirstImage = (currentPage - 1) * imagesPerPage;
+const indexOfLastImage = currentPage * imagesPerPage;
+const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -310,7 +313,7 @@ const Portfolio = () => {
         variants={dataProjectsVariants}
         className="w-full mx-auto mt-10"
       >
-        <div className="gallery grid gap-5 grid-cols-4 sm:grid-rows-[repeat(6,1fr)] h-[1400px] md:grid-cols-2 md:grid-rows-[repeat(4,1fr)]">
+        <div className="gallery grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-auto">
           {currentImages.map((image, index) => (
             <div className="flex flex-col border border-[#202131] rounded-lg p-8 gap-6">
               <div className="bg-radial from-[#1B2E50] from-40% to-[#13162D] pt-6 px-12 rounded-lg w-full h-60 overflow-hidden">
@@ -321,59 +324,41 @@ const Portfolio = () => {
                 <p className="text-white">Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.</p>
               </div>
               <div className="flex">
-              {image.tech.map((techLogo, techIndex) => (
+                {image.tech.map((techLogo, techIndex) => (
                   <div className="border border-[#22253D] rounded-full p-2">
-                  <img
-                    key={techIndex}
-                    src={techLogo}
-                    alt="Tech Logo"
-                    className="h-6 w-6"
-                  />
+                    <img
+                      key={techIndex}
+                      src={techLogo}
+                      alt="Tech Logo"
+                      className="h-6 w-6"
+                    />
                   </div>
                 ))}
               </div>
             </div>
           ))}
         </div>
-        <div className="flex justify-end mt-4 space-x-4">
+        <div className="flex items-center justify-between mt-4 text-white">
+          
+          <span>Page {currentPage} of {totalPages}</span>
+          <div className="flex gap-4">
           <button
-            aria-label="Prev portofolio"
-
             onClick={handlePrevPage}
             disabled={currentPage === 1}
-            className="px-4 py-2 bg-[#1bacdc] text-white rounded disabled:bg-gray-300"
+            className="px-4 py-2 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
           >
-            <span className="sr-only">Prev portofolio</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-caret-left-fill"
-              viewBox="0 0 16 16"
-            >
-              <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-            </svg>
+            Prev
           </button>
           <button
-            aria-label="Next portofolio"
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
-            className="px-4 py-2 bg-[#1bacdc] text-white rounded disabled:bg-gray-300"
+            className="px-4 py-2 bg-[#353B5D]/46 rounded disabled:bg-white/4 border border-white/40 disabled:border-black/16 hover:bg-white/40"
           >
-            <span className="sr-only">Next portofolio</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-caret-right-fill"
-              viewBox="0 0 16 16"
-            >
-              <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-            </svg>
+            Next
           </button>
+          </div>
         </div>
+
       </motion.div>
     </div>
   );
